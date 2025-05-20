@@ -6,6 +6,7 @@
   <title>00Games</title>
   <link rel="stylesheet" href="../CSS/styles.css">
   <script src="../js/script.js"defer></script>
+  <script src="../js/theme.js"defer></script>
 </head>
 <body>
 <header class="topbar">
@@ -17,6 +18,7 @@
       <li><a href="highscores.php">Highscores</a></li>
       <li><a href="Friends.php">Friends</a></li>
       <li><a href="Login.php">Login</a></li>
+      <li><a href="sign.php">Registreer</a></li>
     </ul>
   </nav>
 </header>
