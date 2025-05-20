@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../CSS/styles.css">
-</head>
-<body>
-    <header class="topbar">
-    <img src="../img/00Games.png" alt="Mijn Logo" class="logo">
-  <nav class="navbar">
-    <ul class="nav-list">
-      <li><a href="index.php">Home</a></li>
-      <li><a href="Games.php">Games</a></li>
-      <li><a href="highscores.php">Highscores</a></li>
-      <li><a href="Friends.php">Friends</a></li>
-      <li><a href="Login.php">Login</a></li>
-    </ul>
-  </nav>
-</header>
+
+  <?php require_once '../partials/header.php'; ?>
 <main class="highscore-page">
   <h1>
    Latest highscores!
@@ -46,10 +27,4 @@
   </section>
 </main>
 
-<footer class="footer">
-  <p>&copy; 2025 00games. Alle rechten voorbehouden.</p>
-  <p>Gemaakt  door 00games Team</p>
-</footer>
-
-</body>
-</html>
+  <?php require_once '../partials/footer.php'; ?>
