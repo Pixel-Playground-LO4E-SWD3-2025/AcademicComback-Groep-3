@@ -31,6 +31,13 @@
       <li><a href="Friends.php">Friends</a></li>
       <li><a href="Login.php">Login</a></li>
       <li><a href="sign.php">Registreer</a></li>
+      <?php 
+        session_start();
+        if(isset($_SESSION['isLoggedIn'])){
+          echo "<li><a href='admin.php'>Admin</a></li>";
+          echo "<li><a href='logout.php'>Logout</a></li>";
+        }
+      ?>
     </ul>
   </nav>
 </header>

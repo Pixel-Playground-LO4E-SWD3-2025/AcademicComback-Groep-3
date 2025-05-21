@@ -7,29 +7,22 @@ if (isset($_POST['submit'])) {
         try {
             $conn = new mysqli("localhost", "root", "", "pixelplayground");
 
-   
-            if ($conn->connect_error) {
-                throw new Exception("Verbindingsfout: " . $conn->connect_error);
-            }
+        }catch (Exception $e){
+          $error = "niet goed";
+          die($error);
+        }
+            $user = $_POST['gebruikersnaam'];
+            $pass = $_POST['wachtwoord'];
+           
+            $sql = "INSERT INTO gebruikers (gebruikersnaam, wachtwoord) VALUES ('$user', '$pass')";
 
-       
-            $user = $conn->real_escape_string($_POST['gebruikersnaam']);
-            $pass = $conn->real_escape_string($_POST['wachtwoord']);
+try{
+  $conn->query($sql);
+  $conn->close();
+  echo "Gebruiker toegevoegd";
 
-     
-            $sql = "INSERT INTO gebruikers (gebruikersnaam, wachtwoord) VALUES ('$username', '$password')";
-
-
-            if ($conn->query($sql) === TRUE) {
-                echo "Gebruiker toegevoegd";
-            } else {
-                throw new Exception("Queryfout: " . $conn->error);
-            }
-
-         
-            $conn->close();
-        } catch (Exception $e) {
-            die($e->getMessage());
+          } catch (Exception $e) {
+            die($error);
         }
     } else {
         echo "Vul beide velden in";
@@ -41,9 +34,9 @@ if (isset($_POST['submit'])) {
   <article class="register-box">
     <h2>Account aanmaken</h2>
 
-    <form action="/register" method="POST">
+    <form method="post">
       <section class="input-wrapper">
-        <input type="text" name="username" placeholder="Gebruikersnaam" required />
+        <input type="text" name="gebruikersnaam" placeholder="Gebruikersnaam" required />
       </section>
 
       <section class="input-wrapper">
@@ -51,14 +44,14 @@ if (isset($_POST['submit'])) {
       </section>
 
       <section class="input-wrapper">
-        <input type="password" name="password" placeholder="Wachtwoord" required />
+        <input type="wachtwoord" name="wachtwoord" placeholder="Wachtwoord" required />
       </section>
 
       <section class="input-wrapper">
-        <input type="password" name="confirm_password" placeholder="Bevestig wachtwoord" required />
+        <input type="wachtwoord" name="confirm_password" placeholder="Bevestig wachtwoord" required />
       </section>
 
-      <button type="submit">Registreer</button>
+      <input type="submit" name="submit">Registreer</input>
 
       <section class="register-link">
         <p>Al een account? <a href="/login">Log in</a></p>
