@@ -1,4 +1,42 @@
   <?php require_once '../partials/header.php'; ?>
+
+  <?php
+if (isset($_POST['submit'])) {
+    if (!empty($_POST['gebruikersnaam']) && !empty($_POST['wachtwoord'])) {
+
+        try {
+            $conn = new mysqli("localhost", "root", "", "pixelplayground");
+
+   
+            if ($conn->connect_error) {
+                throw new Exception("Verbindingsfout: " . $conn->connect_error);
+            }
+
+       
+            $user = $conn->real_escape_string($_POST['gebruikersnaam']);
+            $pass = $conn->real_escape_string($_POST['wachtwoord']);
+
+     
+            $sql = "INSERT INTO gebruikers (gebruikersnaam, wachtwoord) VALUES ('$username', '$password')";
+
+
+            if ($conn->query($sql) === TRUE) {
+                echo "Gebruiker toegevoegd";
+            } else {
+                throw new Exception("Queryfout: " . $conn->error);
+            }
+
+         
+            $conn->close();
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    } else {
+        echo "Vul beide velden in";
+    }
+}
+?>
+
 <main class="register-page">
   <article class="register-box">
     <h2>Account aanmaken</h2>

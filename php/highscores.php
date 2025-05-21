@@ -1,6 +1,29 @@
 
   <?php require_once '../partials/header.php'; ?>
 <main class="highscore-page">
+  <?php 
+  try{
+      $conn = new mysqli("localhost", "root", "", "pixelplayground");
+  }catch (Exception $e){
+    $error = $e->getMessage();
+    echo $error;
+  }
+  
+  $sql = "SELECT * FROM gebruikers";
+  try { 
+    if($result = $conn->query($sql)){
+      while ($row = $result->fetch_row()){
+        echo $row[0]." - ".$row[1]."-".$row[2]. "<br>";
+      }   
+    }
+  }catch (Exception $e){
+    $error = $e->getMessage();
+    echo $error;
+  }
+
+  $result->close();
+  $conn->close();
+   ?>
   <h1>
    Latest highscores!
   </h1>

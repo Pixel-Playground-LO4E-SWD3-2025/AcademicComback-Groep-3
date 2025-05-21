@@ -7,3 +7,12 @@ function lightdark(event) {
     document.documentElement.setAttribute("data-theme", "dark");
   }
 }
+
+const hamburgerKnop = document.querySelector("#burger-knop");
+const navbar = document.querySelector(".navbar");
+
+if (hamburgerKnop && navbar) {
+  hamburgerKnop.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+  });
+}

@@ -82,8 +82,6 @@ main {
   color: #fff;
 }
 
-/* --- LOGIN PAGE --- */
-
 .login-page {
   display: flex;
   justify-content: center;
@@ -204,8 +202,6 @@ main {
     width: 290px;
   }
 }
-
-/* --- FOOTER --- */
 
 .footer {
   background-color: var(--primary);
@@ -475,7 +471,7 @@ section.friends-column article {
 
 .input-wrapper input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 2px rgba(160, 132, 232, 0.3); /* mooi paars randje bij focus */
+  box-shadow: 0 0 0 2px rgba(160, 132, 232, 0.3);
   outline: none;
 }
 
@@ -537,6 +533,68 @@ section.friends-column article {
 }
 
 .login-page button:hover {
-  background-color: #7d30ff; /* iets donkerder paars */
+  background-color: #7d30ff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  transition: color 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.nav-list li a:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary);
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 16px;
+  }
 }

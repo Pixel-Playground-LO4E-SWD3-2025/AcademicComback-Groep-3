@@ -1,5 +1,6 @@
 
-  <?php require_once '../partials/header.php'; ?>
+  <?php require_once '../partials/header.php';  ?>
+ 
 
   <section class="intro-text">
     <h1>Welkom</h1>
