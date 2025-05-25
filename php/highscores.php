@@ -13,7 +13,7 @@
   try { 
     if($result = $conn->query($sql)){
       while ($row = $result->fetch_row()){
-        echo $row[0]." - ".$row[1]."-".$row[2]. "<br>";
+        echo $row[0]." - ".$row[1]."-". "<br>";
       }   
     }
   }catch (Exception $e){

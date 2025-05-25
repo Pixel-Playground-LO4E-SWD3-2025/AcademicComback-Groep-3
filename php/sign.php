@@ -38,23 +38,23 @@ try{
       <section class="input-wrapper">
         <input type="text" name="gebruikersnaam" placeholder="Gebruikersnaam" required />
       </section>
-
+<!-- 
       <section class="input-wrapper">
         <input type="email" name="email" placeholder="E-mailadres" required />
+      </section> -->
+
+      <section class="input-wrapper">
+        <input type="password" name="wachtwoord" placeholder="Wachtwoord" required />
       </section>
 
       <section class="input-wrapper">
-        <input type="wachtwoord" name="wachtwoord" placeholder="Wachtwoord" required />
-      </section>
-
-      <section class="input-wrapper">
-        <input type="wachtwoord" name="confirm_password" placeholder="Bevestig wachtwoord" required />
+        <input type="password" name="confirm_password" placeholder="Bevestig wachtwoord" required />
       </section>
 
       <input type="submit" name="submit">Registreer</input>
 
       <section class="register-link">
-        <p>Al een account? <a href="/login">Log in</a></p>
+        <p>Al een account? <a href="login.php">Log in</a></p>
       </section>
     </form>
   </article>
