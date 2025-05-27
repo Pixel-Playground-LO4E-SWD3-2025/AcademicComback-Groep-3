@@ -12,7 +12,7 @@ try{
     echo "Login gegevens juist";
 session_start();
 $_SESSION['isLoggedIn'] = true;
-header('Location: beveiligd.php');
+header('Location: index.php');
   } else{
     echo "logins gegevens niet jusit";
   }

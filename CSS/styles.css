@@ -14,7 +14,7 @@ html[data-theme="dark"] {
   --white: #e5d0ff;
   --gray: #b27fff;
   --text: #eaeaea;
-  --text-soft: #a59fc9;
+  --text-soft: #f1f1f3;
 }
 
 * {
@@ -597,4 +597,57 @@ section.friends-column article {
     flex-direction: column;
     gap: 16px;
   }
+}
+
+.account-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.account-page h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: var(--text);
+}
+
+.account-section {
+  margin-bottom: 30px;
+}
+
+.account-section h2 {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.account-section article {
+  background-color: var(--gray);
+  padding: 16px;
+  border-radius: 12px;
+  color: var(--text-soft);
+}
+
+.account-section article p {
+  margin-bottom: 8px;
+}
+
+.account-section button {
+  background-color: var(--accent);
+  color: rgb(88, 87, 87);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+.account-section button:hover {
+  background-color: var(--primary);
 }

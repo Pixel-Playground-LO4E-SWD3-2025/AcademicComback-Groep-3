@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
           die($error);
         }
             $user = $_POST['gebruikersnaam'];
-            $pass = $_POST['wachtwoord'];
+            $pass = password_hash($_POST['wachtwoord'],  PASSWORD_DEFAULT);
            
             $sql = "INSERT INTO gebruikers (gebruikersnaam, wachtwoord) VALUES ('$user', '$pass')";
 
@@ -22,6 +22,7 @@ try{
   echo "Gebruiker toegevoegd";
 
           } catch (Exception $e) {
+            $error = "niet goed";
             die($error);
         }
     } else {
