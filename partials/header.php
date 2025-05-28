@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../CSS/styles.css">
   <script src="../js/script.js"defer></script>
   <script src="../js/theme.js"defer></script>
+  <script src="../js/unamewachtwoord.js"defer></script>
 </head>
 <body>
 <header class="topbar">

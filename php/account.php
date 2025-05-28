@@ -8,15 +8,19 @@
     <section class="account-section">
       <h2>Gebruikersgegevens</h2>
       <article>
-        <p><strong>Naam:</strong> Jan Jansen</p>
-        <p><strong>Email:</strong> jan@email.com</p>
-        <p><strong>Gebruikersnaam:</strong> jan123</p>
+        <p><strong>Naam:</strong></p>
+        <p><strong>Email:</strong></p>
+        <p><strong>Gebruikersnaam:</strong> </p>
       </article>
     </section>
 
-  <form action="" id="wachtwoord">wachtwoord</form>
-  <input type="text">test
-  <form action="wachtwoord">uname</form>
+  <form action="" id="wachtwoord">wachtwoord
+  <input type="text"></form>
+  <form action="" id="uname">
+    Username
+    <input type="text">
+
+  </form>
 
     <section class="account-section">
       <h2>Acties</h2>
