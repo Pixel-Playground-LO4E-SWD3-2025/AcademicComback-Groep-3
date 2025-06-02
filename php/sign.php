@@ -39,11 +39,7 @@ try{
       <section class="input-wrapper">
         <input type="text" name="gebruikersnaam" placeholder="Gebruikersnaam" required />
       </section>
-<!-- 
-      <section class="input-wrapper">
-        <input type="email" name="email" placeholder="E-mailadres" required />
-      </section> -->
-
+<
       <section class="input-wrapper">
         <input type="password" name="wachtwoord" placeholder="Wachtwoord" required />
       </section>

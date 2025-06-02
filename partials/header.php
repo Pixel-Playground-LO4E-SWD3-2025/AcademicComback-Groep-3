@@ -35,7 +35,7 @@
       <?php 
         session_start();
         if(isset($_SESSION['isLoggedIn'])){
-          echo "<li><a href='account.php'>Admin</a></li>";
+          echo "<li><a href='account.php'>Account</a></li>";
           echo "<li><a href='logout.php'>Logout</a></li>";
         }
       ?>
