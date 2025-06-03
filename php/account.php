@@ -2,9 +2,8 @@
   
   ?>
 
-  <?php if (isset($_POST['submit'])) {
-    if (!empty($_POST['gebruikersnaam']) && !empty($_POST['wachtwoord'])) {
-
+  <?php if (isset($_POST['change-pass'])) {
+    // if (!empty($_POST['gebruikersnaam']) && !empty($_POST['wachtwoord'])) {
         try {
             $conn = new mysqli("localhost", "root", "", "pixelplayground");
 
@@ -12,10 +11,14 @@
           $error = "niet goed";
           die($error);
         }
-            $user = $_POST['gebruikersnaam'];
+            // $user = $_POST['gebruikersnaam'];
             $pass = password_hash($_POST['wachtwoord'],  PASSWORD_DEFAULT);
-           
-            $sql = "UPDATE gebruikers (gebruikersnaam, wachtwoord) VALUES ('$user', '$pass')";
+           $username = $_SESSION ['username'];
+            $sql = "UPDATE gebruikers SET wachtwoord = '$pass' WHERE gebruikersnaam = '$username'";
+            $conn->query($sql);
+      }
+    // }
+   
 ?>
 
   <body>
@@ -31,12 +34,15 @@
       </article>
     </section>
 
-  <form action="" id="wachtwoord">wachtwoord
-  <input type="text"></form>
-  <form action="" id="uname">
+  <form action="" id="wachtwoord" method="post">
+    wachtwoord
+  <input type="text" name="wachtwoord">
+  <input type="submit" name='change-pass'>
+</form>
+  <form action="" id="uname" method="post">
     Username
-    <input type="text">
-
+    <input type="text" name="gebruikersnaam">
+    <input type="submit" name='submit'>
   </form>
 
     <section class="account-section">

@@ -12,6 +12,7 @@ try{
     echo "Login gegevens juist";
 session_start();
 $_SESSION['isLoggedIn'] = true;
+$_SESSION ['username'] = $user;
 header('Location: index.php');
   } else{
     echo "logins gegevens niet jusit";
