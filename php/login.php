@@ -5,14 +5,18 @@ if(isset($_POST['submit'])){
 try{ 
   $user = $_POST['gebruikersnaam'];
   $pass = $_POST['wachtwoord'];
-  $sql = "SELECT * FROM gebruikers WHERE gebruikersnaam = '$user' AND wachtwoord = '$pass'";
+  $sql = "SELECT * FROM gebruikers WHERE gebruikersnaam = '$user'";
   $result = $conn->query($sql);
   
-  if($result->num_rows == 1){
+  if($result->num_rows == 1){ 
     echo "Login gegevens juist";
+    $row = $result->fetch_assoc();// $row = [17, 'tabesh', 'wachtwoord']
+    if (password_verify($pass, $row =='wachtwoord' );)
+
 session_start();
 $_SESSION['isLoggedIn'] = true;
 $_SESSION ['username'] = $user;
+// password_verify($pass, $hashedPassword);
 header('Location: index.php');
   } else{
     echo "logins gegevens niet jusit";

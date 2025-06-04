@@ -15,6 +15,7 @@
             $pass = password_hash($_POST['wachtwoord'],  PASSWORD_DEFAULT);
            $username = $_SESSION ['username'];
             $sql = "UPDATE gebruikers SET wachtwoord = '$pass' WHERE gebruikersnaam = '$username'";
+            $sql = "UPDATE gebruikers SET gebruikersnaam = '$username' WHERE gebruikersnaam = '$username'";
             $conn->query($sql);
       }
     // }
