@@ -1,57 +1,86 @@
 <?php require_once '../partials/header.php'; ?>
 <?php
 
-if(isset($_POST['submit'])){
-try{ 
-  $user = $_POST['gebruikersnaam'];
-  $pass = $_POST['wachtwoord'];
-  $sql = "SELECT * FROM gebruikers WHERE gebruikersnaam = '$user'";
-  $result = $conn->query($sql);
-  
-  if($result->num_rows == 1){ 
-    echo "Login gegevens juist";
-    $row = $result->fetch_assoc();// $row = [17, 'tabesh', 'wachtwoord']
-    if (password_verify($pass, $row =='wachtwoord' );)
+if (isset($_POST['submit']))
+{
+  try
+  {
+    $user = $_POST['gebruikersnaam'];
+    $pass = $_POST['wachtwoord'];
+    $sql = "SELECT * FROM gebruikers WHERE gebruikersnaam = '$user'";
+    $result = $conn->query($sql);
 
-session_start();
-$_SESSION['isLoggedIn'] = true;
-$_SESSION ['username'] = $user;
-// password_verify($pass, $hashedPassword);
-header('Location: index.php');
-  } else{
-    echo "logins gegevens niet jusit";
+    if ($result->num_rows == 1)
+    {
+      echo "Login gegevens juist";
+      $row = $result->fetch_assoc(); // $row = [17, 'tabesh', 'wachtwoord']
+      if (password_verify($pass, $hashUitDatabase))
+      {
+        // hier kun je eventueel een sessie starten
+
+        $_SESSION['username'] = $username;
+
+
+
+        $_SESSION['isLoggedIn'] = true;
+        $_SESSION['username'] = $user;
+        // password_verify($pass, $hashedPassword);
+        header('Location: index.php');
+      }
+    }
+    else
+    {
+      echo "logins gegevens niet juist";
+    }
   }
-} catch (Exception $e) {
-  echo $e->getMessage(); 
-}
+  catch (Exception $e)
+  {
+    echo $e->getMessage();
+  }
 } ?>
-<main>
-  <section class="login-page">
-    <article class="login-box"> 
-      <form  method="post">
-        <h2>Inloggen</h2>
 
-        <fieldset class="input-box">
-          <input type="text" name="gebruikersnaam" required placeholder="gebruikersnaam" />
-        </fieldset>
+<!DOCTYPE html>
+<html lang="en">
 
-        <fieldset class="input-box">
-          <input type="password" name="wachtwoord" required placeholder="Wachtwoord" />
-        </fieldset>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-        <section class="remember-forgot">
-          <label><input type="checkbox" name="remember" /> Herinner mij</label>
-          <a href="#">Wachtwoord vergeten?</a>
+<body>
+
+    <main>
+        <section class="login-page">
+            <article class="login-box">
+                <form method="post">
+                    <h2>Inloggen</h2>
+
+                    <fieldset class="input-box">
+                        <input type="text" name="gebruikersnaam" required placeholder="gebruikersnaam" />
+                    </fieldset>
+
+                    <fieldset class="input-box">
+                        <input type="password" name="wachtwoord" required placeholder="Wachtwoord" />
+                    </fieldset>
+
+                    <section class="remember-forgot">
+                        <label><input type="checkbox" name="remember" /> Herinner mij</label>
+                        <a href="#">Wachtwoord vergeten?</a>
+                    </section>
+
+                    <input type="submit" name="submit">Login</input>
+
+                    <section class="register-link">
+                        <p>Geen account? <a href="sign.php">Account aanmaken</a></p>
+                    </section>
+                </form>
+            </article>
         </section>
+    </main>
 
-        <input type="submit" name="submit">Login</input>
+    <?php require_once '../partials/footer.php'; ?>
 
-        <section class="register-link">
-          <p>Geen account? <a href="sign.php">Account aanmaken</a></p>
-        </section>
-      </form>
-    </article>
-  </section>
-</main>
+</body>
 
-<?php require_once '../partials/footer.php'; ?>
+</html>
