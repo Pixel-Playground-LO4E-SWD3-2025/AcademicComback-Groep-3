@@ -2,7 +2,7 @@
   <main>
     <section class="intro-text">
       <p>
-       Speel een van onze geweldige spelen!
+        Speel een van onze geweldige spelen!
       </p>
     </section>
 
@@ -15,6 +15,11 @@
         <img src="../img/Snake.png" alt="Game afbeelding 2">
         <p>Speel snake hier!</p>
       </div>
+      <div class="image-box">
+        <li><a href="flappy.php">Flappy</a></li>
+        <img src="../img/flappy.jpg" alt="Game afbeelding 3">
+        <p>flappybird hier!</p>
+      </div>
     </section>
   </main>
-<?php require_once '../partials/footer.php'; ?>
+  <?php require_once '../partials/footer.php'; ?>
