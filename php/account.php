@@ -6,7 +6,7 @@
 
 
   $username = $_SESSION['username'];
-  // }
+
 
   ?>
 
@@ -19,7 +19,8 @@
         <article>
           <p><strong>Naam:</strong></p>
           <?php echo $username ?>
-          <p><strong>Gebruikersnaam:</strong> </p>
+          <p><strong>Wachtwoord:</strong> </p>
+          <?php echo $password ?>
         </article>
       </section>
 
