@@ -1,4 +1,11 @@
-  <?php require_once '../partials/header.php'; ?>
+  <?php
+
+  require_once '../partials/header.php';
+  require_once 'db.php';
+
+
+  ?>
+
   <main>
     <section class="intro-text">
       <p>
@@ -16,7 +23,7 @@
         <p>Speel snake hier!</p>
       </div>
       <div class="image-box">
-        <li><a href="flappy.php">Flappy</a></li>
+        <li><a href="flappy.html">Flappy</a></li>
         <img src="../img/flappy.jpg" alt="Game afbeelding 3">
         <p>flappybird hier!</p>
       </div>

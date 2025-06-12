@@ -1,4 +1,8 @@
-<?php require_once '../partials/header.php'; ?>
+<?php
+
+require_once 'db.php';
+
+require_once '../partials/header.php'; ?>
 <?php
 
 if (isset($_POST['submit']))
@@ -17,7 +21,7 @@ if (isset($_POST['submit']))
       $hashUitDatabase = $row->wachtwoord;
       if (password_verify($pass, $hashUitDatabase))
       {
-        // hier kun je eventueel een sessie starten
+
 
         $_SESSION['username'] = $username;
 
@@ -25,7 +29,7 @@ if (isset($_POST['submit']))
 
         $_SESSION['isLoggedIn'] = true;
         $_SESSION['username'] = $user;
-        // password_verify($pass, $hashedPassword);
+
         header('Location: index.php');
       }
     }

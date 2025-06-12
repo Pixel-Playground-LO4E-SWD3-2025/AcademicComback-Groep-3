@@ -1,13 +1,22 @@
-<?php require_once '../partials/header.php'; ?>
+<?php
+
+require_once 'db.php';
+require_once '../partials/header.php';
+
+?>
 
 <?php
-if (isset($_POST['submit'])) {
-  if (!empty($_POST['gebruikersnaam']) && !empty($_POST['wachtwoord'])) {
+if (isset($_POST['submit']))
+{
+  if (!empty($_POST['gebruikersnaam']) && !empty($_POST['wachtwoord']))
+  {
 
-    try {
+    try
+    {
       $conn = new mysqli("localhost", "root", "", "pixelplayground");
-
-    } catch (Exception $e) {
+    }
+    catch (Exception $e)
+    {
       $error = "niet goed";
       die($error);
     }
@@ -16,16 +25,20 @@ if (isset($_POST['submit'])) {
 
     $sql = "INSERT INTO gebruikers (gebruikersnaam, wachtwoord) VALUES ('$user', '$pass')";
 
-    try {
+    try
+    {
       $conn->query($sql);
       $conn->close();
       echo "Gebruiker toegevoegd";
-
-    } catch (Exception $e) {
+    }
+    catch (Exception $e)
+    {
       $error = "niet goed";
       die($error);
     }
-  } else {
+  }
+  else
+  {
     echo "Vul beide velden in";
   }
 }
