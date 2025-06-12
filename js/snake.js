@@ -14,10 +14,11 @@ function draw() {
 // => betekent do something
 //appendchild voegt een kind toe aan het einde van de lijst idfk wat dat betekent maar komt goed vraag braas
 function drawSnake() {
-  snake.forEach((segment) => {});
-  const snakeElement = createGameElement("div", "snake");
-  setPosition(snakeElement, segment);
-  board.appendChild(snakeElement);
+  snake.forEach((segment) => {
+    const snakeElement = createGameElement("div", "snake");
+    setPosition(snakeElement, segment);
+    board.appendChild(snakeElement);
+  });
 }
 
 //dit maakt de snake en zn eten
@@ -33,6 +34,14 @@ function createGameElement(tag, className) {
 function setPosition(element, position) {
   element.style.gridColumn = position.x;
   element.style.gridRow = position.y;
+}
+document.getElementById("start-btn").addEventListener("click", startGame);
+
+function startGame() {
+  // Reset de slang en eventueel andere variabelen
+  snake = [{ x: 10, y: 10 }];
+  draw();
+  // Hier kun je straks ook de game-loop starten
 }
 
 //testing of ik niet heb opgefucked

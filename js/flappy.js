@@ -3,6 +3,8 @@ let boardHeight = 640;
 let backgroundImg = new Image();
 backgroundImg.src = "../img/flappybirdbg.png";
 let inputLocked = false;
+let board, context;
+let birdImg, topPipeImg, bottomPipeImg, playButtonImg;
 
 document.addEventListener("keydown", handleKeyDown);
 
@@ -99,21 +101,23 @@ window.onload = function () {
 
   requestAnimationFrame(update);
 };
+
+function update() {
+  requestAnimationFrame(update);
+  context.clearRect(0, 0, board.width, board.height);
+
+  if (currentState === GAME_STATE.MENU) {
+    renderMenu();
+  } else if (currentState === GAME_STATE.PLAYING) {
+    renderGame();
+  } else if (currentState === GAME_STATE.GAME_OVER) {
+    renderGameOver();
+  }
+}
+
 function renderMenu() {
   if (backgroundImg.complete) {
     context.drawImage(backgroundImg, 0, 0, boardWidth, boardHeight);
-  }
-  function update() {
-    requestAnimationFrame(update);
-    context.clearRect(0, 0, board.width, board.height);
-
-    if (currentState === GAME_STATE.MENU) {
-      renderMenu();
-    } else if (currentState === GAME_STATE.PLAYING) {
-      renderGame();
-    } else if (currentState === GAME_STATE.GAME_OVER) {
-      renderGameOver();
-    }
   }
 
   if (playButtonImg.complete) {
@@ -207,7 +211,7 @@ function handleKeyDown(e) {
       resetGame();
       currentState = GAME_STATE.MENU;
     } else if (currentState === GAME_STATE.PLAYING) {
-      velocityY = -6;
+      velocityY = -10;
     }
   }
 }
@@ -222,7 +226,7 @@ function startGame() {
   if (pipeIntervalId) {
     clearInterval(pipeIntervalId);
   }
-
+  placePipes();
   pipeIntervalId = setInterval(placePipes, 1500);
 }
 
