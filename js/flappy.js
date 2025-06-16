@@ -44,11 +44,13 @@ let bird = {
 
 let velocityY = 0;
 let velocityX = -2;
-let gravity = 0.5;
+let gravity = 0.4;
 let birdY = boardHeight / 2;
 let pipeWidth = 50;
 let pipeGap = 200;
 let score = 0;
+let highscore = localStorage.getItem("highscore") || 0;
+
 let pipeArray = [];
 let pipeIntervalId;
 
@@ -189,6 +191,14 @@ function renderGameOver() {
     context.drawImage(gameOverImg, x, y, imgWidth, imgHeight);
 
     let scoreText = `Your score: ${Math.floor(score)}`;
+    if (score > highscore) {
+      highscore = Math.floor(score);
+      localStorage.setItem("highscore", highscore);
+    }
+
+    let highscoreText = `Highscore: ${highscore}`;
+    context.fillText(highscoreText, boardWidth / 2, y + imgHeight + 100);
+
     context.fillStyle = "white";
     context.font = "45px sans-serif";
     context.textAlign = "center";

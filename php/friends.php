@@ -1,12 +1,7 @@
 <?php
-
 require_once 'db.php';
 require_once '../partials/header.php';
 
-?>
-
-
-<?php
 if (isset($_POST['submit']))
 {
   if (!empty($_POST["naam"]))
@@ -18,30 +13,40 @@ if (isset($_POST['submit']))
       $result = $conn->query($sql);
       if ($result === TRUE)
       {
-        echo "New record created succesfully";
+        echo "<p>Vriend toegevoegd: $naam</p>";
       }
       else
       {
-        echo "Error" . $sql . "<br>" . $conn->error;
+        echo "<p>Er is iets misgegaan: " . $conn->error . "</p>";
       }
     }
     catch (Exception $e)
     {
-      echo $e->getMessage();
+      echo "<p>Foutmelding: " . $e->getMessage() . "</p>";
     }
   }
+  else
+  {
+    echo "<p>Voer een naam in.</p>";
+  }
 }
-
-
 ?>
 
 <body>
-  <form action="" method="post">
-    <input type="text" name="naam">
-    <input type="submit" name="submit">
+  <h1>Voeg een vriend toe</h1>
+  <form id="friendForm" action="" method="post">
+    <label for="naam">Naam:</label><br>
+    <input type="text" id="naam" name="naam"><br><br>
+    <input type="submit" name="submit" value="Toevoegen">
+  </form>
+  <form id="bevestigBox">
+    <p>Weet je zeker dat je wilt toevoegen?</p>
+    <button type="button" id="bevestigJa">Ja</button>
+    <button type="button" id="bevestigNee">Nee</button>
   </form>
 
 </body>
+
 
 </html>
 
