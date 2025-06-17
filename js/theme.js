@@ -42,7 +42,7 @@ document.addEventListener("keydown", function (event) {
   if (event.key === konamiCode[konamiIndex]) {
     konamiIndex++;
     if (konamiIndex === konamiCode.length) {
-      alert("GEfeliciteerd! Je hebt de Konami Code ingevoerd!");
+      alert("je hebt de easter egg gevonden je bent soldaat");
       konamiIndex = 0;
     }
   } else {
