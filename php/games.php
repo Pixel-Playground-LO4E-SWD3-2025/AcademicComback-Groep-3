@@ -22,7 +22,7 @@
           <div class="image-box">
               <img src="../img/Snake.png" alt="Game afbeelding 2">
               <p>Speel snake hier!</p>
-              <li><a href="snake.html">Snake</a></li>
+              <li><a href="snake.php">Snake</a></li>
           </div>
           <div class="image-box">
 
