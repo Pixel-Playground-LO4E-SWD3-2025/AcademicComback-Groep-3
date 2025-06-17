@@ -1,4 +1,3 @@
-// Check of er een thema is opgeslagen en zet 'm
 window.addEventListener("DOMContentLoaded", () => {
   const opgeslagenThema = localStorage.getItem("thema");
   if (opgeslagenThema) {
@@ -23,3 +22,30 @@ if (hamburgerKnop && navbar) {
     navbar.classList.toggle("active");
   });
 }
+
+const konamiCode = [
+  "ArrowUp",
+  "ArrowUp",
+  "ArrowDown",
+  "ArrowDown",
+  "ArrowLeft",
+  "ArrowRight",
+  "ArrowLeft",
+  "ArrowRight",
+  "b",
+  "a",
+];
+
+let konamiIndex = 0;
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === konamiCode[konamiIndex]) {
+    konamiIndex++;
+    if (konamiIndex === konamiCode.length) {
+      alert("je hebt de easter egg gevonden je bent soldaat");
+      konamiIndex = 0;
+    }
+  } else {
+    konamiIndex = 0;
+  }
+});
