@@ -30,6 +30,12 @@
               <p>flappybird hier!</p>
               <li><a href="flappy.php">Flappy</a></li>
           </div>
+          <div class="image-box">
+
+              <img src="../img/flappy.jpg" alt="Game afbeelding 3">
+              <p>speel Connect 4 hier!</p>
+              <li><a href="bke.php">connect 4</a></li>
+          </div>
       </section>
   </main>
   <?php require_once '../partials/footer.php'; ?>
