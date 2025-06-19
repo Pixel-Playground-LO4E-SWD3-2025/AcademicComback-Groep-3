@@ -18,6 +18,6 @@ bevestigJa.addEventListener("click", function () {
   form.submit(); // Dit verstuurt het formulier
 });
 
-bevestigNee.addEventListener("click", function () {
+bevestigNee.addEventListener("click", () => {
   bevestigBox.style.display = "none";
 });
