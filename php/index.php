@@ -1,24 +1,13 @@
 <?php
-require_once 'db.php';
 
-require_once '../partials/header.php';
-
-?>
-
-
-<?php
-
-
-$user = $_SESSION['gebruikersnaam'];
-
+require_once '../partials/home.php';
 
 ?>
-
 
 <section class="intro-text">
-    <h1>Welkom </h1>
-    <?php echo $user ?>
-    <h2>Mijn website
+    <h1>Welkom <?php echo $user ?></h1>
+
+    <h2> Bij 00 games
     </h2>
     <p>
         Dit is een website om spelletjes te spelen met vrienden.

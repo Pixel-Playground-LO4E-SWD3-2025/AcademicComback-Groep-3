@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="nl" data-theme="light">
+<?php
+
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -22,16 +25,20 @@
                 <li><a href="Games.php">Games</a></li>
                 <li><a href="highscores.php">Highscores</a></li>
                 <li><a href="Friends.php">Friends</a></li>
-                <li><a href="Login.php">Login</a></li>
-                <li><a href="sign.php">Registreer</a></li>
                 <?php
                 session_start();
-                if (isset($_SESSION['isLoggedIn']))
+                if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] === true)
                 {
                     echo "<li><a href='account.php'>Account</a></li>";
                     echo "<li><a href='logout.php'>Logout</a></li>";
                 }
+                else
+                {
+                    echo "<li><a href='Login.php'>Login</a></li>";
+                    echo "<li><a href='sign.php'>Registreer</a></li>";
+                }
                 ?>
+
             </ul>
         </nav>
     </header>
