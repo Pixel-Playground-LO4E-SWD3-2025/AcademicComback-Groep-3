@@ -228,3 +228,4 @@ function updateHighScore() {
   }
   highScoreText.style.display = "block";
 }
+// hightscores
