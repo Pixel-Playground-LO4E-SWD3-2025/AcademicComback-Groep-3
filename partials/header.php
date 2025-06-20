@@ -29,6 +29,9 @@
                 session_start();
                 if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] === true)
                 {
+
+                    echo "<li><a href='vrienden_verstuurd.php'>Verzoeken verstuurd</a</li>";
+
                     echo "<li><a href='account.php'>Account</a></li>";
                     echo "<li><a href='logout.php'>Logout</a></li>";
                 }

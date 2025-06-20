@@ -667,3 +667,139 @@ section.friends-column article {
 #bevestigBox button {
   margin: 5px;
 }
+.friend-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 15px;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+}
+
+.friend-page-container > h1 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  color: var(--primary);
+  text-align: center;
+  max-width: 600px;
+}
+
+.friend-page-container form {
+  background-color: var(--foreground);
+  padding: 30px 35px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(160, 132, 232, 0.25);
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.friend-page-container form#friendForm label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.friend-page-container form#friendForm input[type="text"] {
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1.5px solid var(--accent);
+  font-size: 1.1rem;
+  outline-offset: 3px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.friend-page-container form#friendForm input[type="text"]:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.friend-page-container form#friendForm input[type="submit"] {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 700;
+  padding: 14px 0;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 1.15rem;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.friend-page-container form#friendForm input[type="submit"]:hover {
+  background-color: var(--accent);
+}
+
+.friend-page-container form#bevestigBox {
+  background-color: var(--foreground);
+  padding: 25px 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(160, 132, 232, 0.25);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  display: none; /* standaard verbergen */
+  flex-direction: column;
+  gap: 25px;
+  box-sizing: border-box;
+}
+
+.friend-page-container form#bevestigBox p {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin: 0;
+}
+
+.friend-page-container form#bevestigBox button {
+  cursor: pointer;
+  border: none;
+  border-radius: 16px;
+  font-weight: 700;
+  padding: 12px 0;
+  width: 140px;
+  font-size: 1.05rem;
+  transition: background-color 0.3s ease;
+}
+
+.friend-page-container #bevestigJa {
+  background-color: var(--primary);
+  color: white;
+}
+
+.friend-page-container #bevestigJa:hover {
+  background-color: var(--accent);
+}
+
+.friend-page-container #bevestigNee {
+  background-color: #ccc;
+  color: #444;
+}
+
+.friend-page-container #bevestigNee:hover {
+  background-color: #bbb;
+}
+
+@media (max-width: 480px) {
+  .friend-page-container form,
+  .friend-page-container form#bevestigBox {
+    max-width: 95%;
+    padding: 25px 20px;
+  }
+
+  .friend-page-container form#bevestigBox button {
+    width: 120px;
+    font-size: 1rem;
+  }
+}

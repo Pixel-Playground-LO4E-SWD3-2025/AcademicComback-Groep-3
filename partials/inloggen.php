@@ -22,14 +22,15 @@ if (isset($_POST['submit']))
             $hashUitDatabase = $row->wachtwoord;
             if (password_verify($pass, $hashUitDatabase))
             {
+                $_SESSION['user_id'] = $row->id;
+                $_SESSION['username'] = $user;
 
 
-                $_SESSION['username'] = $username;
 
 
 
                 $_SESSION['isLoggedIn'] = true;
-                $_SESSION['username'] = $user;
+
 
                 header('Location: index.php');
             }
